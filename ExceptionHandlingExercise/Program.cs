@@ -20,11 +20,11 @@ namespace ExceptionHandlingExercise
             //TODO START HERE:
 
             // 1) Create an char[], it must contain 6 numbers and 3 letters - name it arr
-            
+            char[] arr = { 'a', 'a', 'a', '1', '2', '3', '4', '5', '6' };
             // 2) Create a list called numbers that will hold integers
-        
+                var numbers = new List<int>();
             // 3) Create an string variable with an empty string initializer - name it str
-            
+            string str = String.Empty;
             // 4) Make a foreach loop to iterate through your character array            
                 // 5) Create a try-catch inide of your foreach loop
                     // 6) Inside the try block: 
@@ -34,14 +34,25 @@ namespace ExceptionHandlingExercise
                 
                    // 10) Inside the catch block:
                        // 11) In the scope of your catch you can use the following code:                  
-                       // Console.WriteLine($"Unable to Parse '{character}'"); //character will be the name of each item in your collection
+                       // Console.WriteLine($'Unable to Parse '{character}''); //character will be the name of each item in your collection
                 
-            
-            // Uncomment the code below to see the numbers you successfully added to the numbers list: 
-            //foreach (var num in numbers)
-            //{
-            //    Console.WriteLine(num);
-            //}
+            foreach (char c in arr) 
+            {
+                try 
+                {
+                    numbers.Add(int.Parse(c.ToString()));
+                    
+                }
+                catch 
+                {
+                    Console.WriteLine($"Unable to Parse {c}");
+                }
+            }
+            //Uncomment the code below to see the numbers you successfully added to the numbers list: 
+            foreach (var num in numbers)
+            {
+                Console.WriteLine(num);
+            }
         }
     }
 }
